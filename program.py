@@ -39,8 +39,8 @@ def generate_html(article_content):
             {"role": "system", "content": "You are an assistant that formats articles into HTML."},
             {"role": "user", "content": (
                 f"Create an HTML body content structure for the following article content (without <html>, <head>, and <body> tags, plain body content). "
-                f"Use appropriate tags, insert <img src='image_placeholder.jpg' alt='...'/> for image suggestions, "
-                f"and add captions with <figcaption> where relevant.\n\n"
+                f"Use appropriate tags, insert <img src='image_placeholder.jpg' alt='...'/> for image suggestions (ang images should be in figure), "
+                f"and add descriptive captions with <figcaption> where relevant.\n\n"
                 f"Article content:\n{article_content}"
             )}
         ],
@@ -59,6 +59,31 @@ def save_html(content, file_path):
     """
     with open(file_path, 'w', encoding='utf-8') as file:
         file.write(content)
+        
+def generate_overview(artykul_path, template_path, output_path):
+    """
+    Save the generated HTML content from the article file by inserting it into a template.
+    
+    Parameters:
+        artykul_path (str): The path to the article HTML file.
+        template_path (str): The path to the template file.
+        output_path (str): The path to save the final HTML.
+    """
+    # Odczytaj treść artykułu z pliku artykul.html
+    with open(artykul_path, 'r', encoding='utf-8') as artykul_file:
+        artykul_content = artykul_file.read()
+        
+    # Odczytaj szablon z pliku
+    with open(template_path, 'r', encoding='utf-8') as template_file:
+        template = template_file.read()
+    
+    # Wstaw treść artykułu w odpowiednie miejsce w szablonie
+    final_html = template.replace("<!-- Paste the generated article HTML code here -->", artykul_content)
+    
+    # Zapisz ostateczny plik HTML
+    with open(output_path, 'w', encoding='utf-8') as output_file:
+        output_file.write(final_html)
+
 
 def main():
     # Load the article content from the 'article.txt' file
@@ -69,6 +94,10 @@ def main():
     
     # Save the generated HTML content to 'artykul.html'
     save_html(html_content, "artykul.html")
+    
+    # Generate overview HTML with template from 'szablon.html' and content from 'artykul.html'
+    generate_overview('artykul.html', 'szablon.html', 'podglad.html')
+
 
 if __name__ == "__main__":
     main()
