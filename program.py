@@ -2,7 +2,7 @@ import openai
 import os
 
 # Konfiguracja klucza API OpenAI
-openai.api_key = "YOUR_API_KEY"
+openai.api_key = os.environ.get("API_KEY")
 
 def load_article(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
