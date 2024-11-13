@@ -1,8 +1,12 @@
 import openai
 import os
+from dotenv import load_dotenv
 
-# Konfiguracja klucza API OpenAI
-openai.api_key = os.environ.get("API_KEY")
+# Załaduj zmienne środowiskowe z pliku .env
+load_dotenv()
+
+# Pobierz klucz API z zmiennej środowiskowej
+openai.api_key = os.getenv("API_KEY")
 
 def load_article(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
