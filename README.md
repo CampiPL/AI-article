@@ -38,12 +38,10 @@ Before you begin, ensure that you have the following installed:
 
 On Windows:
 
-	```bash
 	.\env\Scripts\activate
 
 On macOS/Linux:
 
-	```bash
 	source env/bin/activate
 
 5. Install the required dependencies:
