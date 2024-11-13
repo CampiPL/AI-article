@@ -36,11 +36,11 @@ Before you begin, ensure that you have the following installed:
 
 4. Activate the virtual environment:
 
-On Windows:
+ - On Windows:
 
 	.\env\Scripts\activate
 
-On macOS/Linux:
+ - On macOS/Linux:
 
 	source env/bin/activate
 
@@ -60,7 +60,8 @@ On macOS/Linux:
 
 2. Run the program.py script to process the article and generate the HTML:
 
-python program.py
+	```bash
+	python program.py
 
 3. The script will generate:
 
