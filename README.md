@@ -26,29 +26,35 @@ Before you begin, ensure that you have the following installed:
 
 2. Navigate to the project directory:
 
-cd article-to-html-generator
+	```bash
+	cd article-to-html-generator
 
 3. Create a virtual environment:
 
-python -m venv env
+	```bash
+	python -m venv env
 
 4. Activate the virtual environment:
 
 On Windows:
 
-.\env\Scripts\activate
+	```bash
+	.\env\Scripts\activate
 
 On macOS/Linux:
 
-source env/bin/activate
+	```bash
+	source env/bin/activate
 
 5. Install the required dependencies:
 
-pip install -r requirements.txt
+	```bash
+	pip install -r requirements.txt
 
 6. Create a .env file in the root directory with your OpenAI API key:
 
-API_KEY=your-api-key-here
+	```makefile
+	API_KEY=your-api-key-here
 
 ## Usage
 
