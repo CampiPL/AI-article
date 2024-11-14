@@ -85,7 +85,3 @@ Before you begin, ensure that you have the following installed:
  - openai: For interacting with the OpenAI API.
  - python-dotenv: To load environment variables from the .env file.
  - Other dependencies listed in requirements.txt.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
