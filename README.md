@@ -1,23 +1,23 @@
 # Article to HTML Generator
 
-This project is a Python-based tool that connects to the OpenAI API to convert an article into HTML format. The generated HTML content can then be embedded into a predefined template and saved as an output file for preview purposes. This project uses a custom template for article presentation and automatically adds image placeholders and captions where necessary.
+This project is a Python-based application that connects to the OpenAI API to generate HTML content from a given article. The app processes the article, generates HTML body content with appropriate structure and tags, and then saves the output to a file. Additionally, it can generate an overview HTML page by embedding the generated article HTML into a template.
 
 ## Features
 
-- Loads an article from a text file.
-- Uses OpenAI's GPT-3.5 model to generate HTML from article content.
-- Embeds the generated HTML content into a predefined template.
-- Saves the final HTML output into a file for previewing.
-- Supports API key configuration via a `.env` file to ensure security.
+ - Article Processing: Load a text file containing an article and generate structured HTML content using OpenAI's API.
+ - Template Integration: Combine the generated article HTML with a predefined template to produce a complete overview HTML page.
+ - CLI Interface: Command-line interface for generating article HTML, overview HTML, or both, with simple arguments.
+ - Supports API key configuration via a `.env` file to ensure security.
 
-## Prerequisites
+## Requirements
 
 Before you begin, ensure that you have the following installed:
 
-- Python 3.7 or higher
-- [pip](https://pip.pypa.io/en/stable/) (Python package manager)
+ - Python 3.7 or higher
+ - [pip](https://pip.pypa.io/en/stable/) (Python package manager)
+ - OpenAI API key (ensure you have registered and received an API key from OpenAI)
 
-## Installation
+## Setup
 
 1. Clone this repository to your local machine:
 
@@ -54,23 +54,7 @@ Before you begin, ensure that you have the following installed:
 6. Create a .env file in the root directory with your OpenAI API key:
 
 	```makefile
-	API_KEY=your-api-key-here
-
-## Usage
-
-1. Prepare an article text file (article.txt) containing the article content you want to convert.
-
-2. Run the program.py script to process the article and generate the HTML:
-
-	```bash
-	python program.py
-
-3. The script will generate:
-
- - artykul.html: The raw HTML content of the article.
- - podglad.html: A final HTML preview with a template applied.
-
-4. Open the podglad.html file in your browser to view the formatted article.
+	API_KEY=your-openai-api-key-here
 
 ## Files
 
@@ -80,8 +64,51 @@ Before you begin, ensure that you have the following installed:
  - requirements.txt: List of required Python libraries.
  - .gitignore: To ignore sensitive files such as the .env file.
 
+## Usage
+
+You have three options to run this program depending on arguments you pass
+
+1. Generate HTML from article
+	To generate HTML from an article:
+
+	```bash
+	python program.py
+
+	This will:
+
+	 - Read the article from article.txt.
+	 - Generate HTML and save it to artykul.html.
+
+2. Generate HTML from article with its overview HTML
+
+	To generate the overview HTML by combining the article HTML with the template:
+
+	bash
+	python program.py --overview
+
+	This will:
+
+	- Generate HTML from article.txt (if not already generated).
+	- Create podglad.html by inserting the article HTML into the szablon.html template.
+
+3. Generate Only Overview HTML
+	If you already have the artykul.html file and only want to generate the overview HTML:
+
+	bash
+	python program.py --only-overview
+
+	This will:
+
+	- Read the existing artykul.html and szablon.html.
+	- Generate podglad.html without regenerating the article HTML.
+
 ## Dependencies
 
  - openai: For interacting with the OpenAI API.
  - python-dotenv: To load environment variables from the .env file.
  - Other dependencies listed in requirements.txt.
+
+## Troubleshooting
+
+Ensure the .env file contains a valid API key.
+If any files (e.g., article.txt, szablon.html) are missing or corrupted, the program will raise appropriate errors.
