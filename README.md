@@ -95,6 +95,7 @@ This project is a Python-based application that connects to the OpenAI API to ge
 
 	```bash
 	python program.py --only-overview
+	```
 
 	This will:
 
