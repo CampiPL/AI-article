@@ -11,7 +11,7 @@ This project is a Python-based application that connects to the OpenAI API to ge
 
 ## Requirements
 
-Before you begin, ensure that you have the following installed:
+### Before you begin, ensure that you have the following installed:
 
  - Python 3.7 or higher
  - [pip](https://pip.pypa.io/en/stable/) (Python package manager)
@@ -65,19 +65,19 @@ Before you begin, ensure that you have the following installed:
 
 ## Usage
 
-You have three options to run this program depending on arguments you pass
+### You have three options to run this program depending on arguments you pass
 
 1. Generate HTML from article
+
 	To generate HTML from an article:
 
 	```bash
 	python program.py
-	```
 
-	This will:
+This will:
 
-	 - Read the article from article.txt.
-	 - Generate HTML and save it to artykul.html.
+- Read the article from article.txt.
+- Generate HTML and save it to artykul.html.
 
 2. Generate HTML from article with its overview HTML
 
@@ -85,12 +85,11 @@ You have three options to run this program depending on arguments you pass
 
 	```bash
 	python program.py --overview
-	```
 
-	This will:
+This will:
 
-	- Generate HTML from article.txt (if not already generated).
-	- Create podglad.html by inserting the article HTML into the szablon.html template.
+- Generate HTML from article.txt (if not already generated).
+- Create podglad.html by inserting the article HTML into the szablon.html template.
 
 3. Generate Only Overview HTML
 	If you already have the artykul.html file and only want to generate the overview HTML:
