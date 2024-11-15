@@ -72,6 +72,7 @@ You have three options to run this program depending on arguments you pass
 
 	```bash
 	python program.py
+	```
 
 	This will:
 
@@ -84,6 +85,7 @@ You have three options to run this program depending on arguments you pass
 
 	```bash
 	python program.py --overview
+	```
 
 	This will:
 
