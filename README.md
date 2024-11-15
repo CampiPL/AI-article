@@ -15,7 +15,6 @@ Before you begin, ensure that you have the following installed:
 
  - Python 3.7 or higher
  - [pip](https://pip.pypa.io/en/stable/) (Python package manager)
- - OpenAI API key (ensure you have registered and received an API key from OpenAI)
 
 ## Setup
 
@@ -83,7 +82,7 @@ You have three options to run this program depending on arguments you pass
 
 	To generate the overview HTML by combining the article HTML with the template:
 
-	bash
+	```bash
 	python program.py --overview
 
 	This will:
@@ -94,7 +93,7 @@ You have three options to run this program depending on arguments you pass
 3. Generate Only Overview HTML
 	If you already have the artykul.html file and only want to generate the overview HTML:
 
-	bash
+	```bash
 	python program.py --only-overview
 
 	This will:
@@ -105,7 +104,9 @@ You have three options to run this program depending on arguments you pass
 ## Dependencies
 
  - openai: For interacting with the OpenAI API.
+ - OpenAI API key (ensure you have registered and received an API key from OpenAI)
  - python-dotenv: To load environment variables from the .env file.
+ - argparse: For command-line argument parsing
  - Other dependencies listed in requirements.txt.
 
 ## Troubleshooting
