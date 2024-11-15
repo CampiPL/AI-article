@@ -69,27 +69,26 @@ This project is a Python-based application that connects to the OpenAI API to ge
 
 1. Generate HTML from article
 
-	To generate HTML from an article:
 
 	```bash
 	python program.py
+	```
 
-This will:
+	This will:
 
-- Read the article from article.txt.
-- Generate HTML and save it to artykul.html.
+	- Read the article from article.txt.
+	- Generate HTML and save it to artykul.html.
 
 2. Generate HTML from article with its overview HTML
 
-	To generate the overview HTML by combining the article HTML with the template:
-
 	```bash
 	python program.py --overview
+	```
 
-This will:
+	This will:
 
-- Generate HTML from article.txt (if not already generated).
-- Create podglad.html by inserting the article HTML into the szablon.html template.
+	- Generate HTML from article.txt (if not already generated).
+	- Create podglad.html by inserting the article HTML into the szablon.html template.
 
 3. Generate Only Overview HTML
 	If you already have the artykul.html file and only want to generate the overview HTML:
