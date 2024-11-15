@@ -53,7 +53,7 @@ This project is a Python-based application that connects to the OpenAI API to ge
 6. Create a .env file in the root directory with your OpenAI API key:
 
 	```makefile
-	API_KEY= "your-openai-api-key-here"
+	API_KEY = "your-openai-api-key-here"
 
 ## Files
 
