@@ -1,5 +1,6 @@
 import openai
 import os
+import argparse
 from dotenv import load_dotenv
 
 # Load environment variables from the .env file
@@ -39,8 +40,9 @@ def generate_html(article_content):
             {"role": "system", "content": "You are an assistant that formats articles into HTML."},
             {"role": "user", "content": (
                 f"Create an HTML body content structure for the following article content (without <html>, <head>, and <body> tags, plain body content). "
-                f"Use appropriate tags, insert <img src='image_placeholder.jpg' alt='...'/> for image suggestions (ang images should be in figure), "
-                f"and add descriptive captions with <figcaption> where relevant.\n\n"
+                f"Use appropriate tags, insert <img src='image_placeholder.jpg' alt='...'/> for image suggestions (at least one per heading) and put them "
+                f"in the appropriate place in the text (but not in the beginning), also those images should be in figure. "
+                f"Add descriptive captions with <figcaption> to each image.\n\n"
                 f"Article content:\n{article_content}"
             )}
         ],
@@ -86,18 +88,28 @@ def generate_overview(artykul_path, template_path, output_path):
 
 
 def main():
-    # Load the article content from the 'article.txt' file
-    article_content = load_article("article.txt")
-    
-    # Generate HTML content using the loaded article
-    html_content = generate_html(article_content)
-    
-    # Save the generated HTML content to 'artykul.html'
-    save_html(html_content, "artykul.html")
-    
-    # Generate overview HTML with template from 'szablon.html' and content from 'artykul.html'
-    generate_overview('artykul.html', 'szablon.html', 'podglad.html')
+    # Set up argument parser
+    parser = argparse.ArgumentParser(description="Generate HTML content and optionally create an overview.")
+    parser.add_argument("--overview", action="store_true", help="Generate overview HTML using the template.")
+    parser.add_argument("--only-overview", action="store_true", help="Only generate the overview HTML using the template.")
+    args = parser.parse_args()
 
+    if args.only_overview:
+        # Generate overview HTML directly from existing 'artykul.html'
+        generate_overview('artykul.html', 'szablon.html', 'podglad.html')
+    else:
+        # Load the article content from the 'article.txt' file
+        article_content = load_article("article.txt")
+        
+        # Generate HTML content using the loaded article
+        html_content = generate_html(article_content)
+        
+        # Save the generated HTML content to 'artykul.html'
+        save_html(html_content, "artykul.html")
+        
+        # Generate overview if the --overview flag is provided
+        if args.overview:
+            generate_overview('artykul.html', 'szablon.html', 'podglad.html')
 
 if __name__ == "__main__":
     main()
