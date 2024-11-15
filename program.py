@@ -32,9 +32,12 @@ def generate_html(article_content):
                 {"role": "system", "content": "You are an assistant that formats articles into HTML."},
                 {"role": "user", "content": (
                     f"Create an HTML body content structure for the following article content (without <html>, <head>, and <body> tags, plain body content). "
+                    f"Structure each section with <section> or <article> tags if appropriate. "
+                    f"Use <h1> for the title headings, <h2> for main section headings and <h3> (if necessary) for subsections. "
                     f"Use appropriate tags, insert <img src='image_placeholder.jpg' alt='...'/> for image suggestions (at least one per heading) and put them "
-                    f"in the appropriate place in the text (but not in the beginning), also those images should be in figure. "
-                    f"Add descriptive captions with <figcaption> to each image.\n\n"
+                    f"in the right place in the text (but not in the beginning), also those images should be in figure. "
+                    f"Add descriptive captions with <figcaption> to each image. "
+                    f"Don't skip any part of the article content!!!\n\n"
                     f"Article content:\n{article_content}"
                 )}
             ],

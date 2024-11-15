@@ -5,15 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Podgląd Artykułu</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        h1, h2, h3 { color: #333; }
-        img { max-width: 100%; height: auto; }
-        figure { display: flex; flex-direction: column; align-items: center; margin: 20px 0; }
-        figcaption { font-style: italic; color: #666; }
-        p { line-height: 1.6; margin: 10px 0; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header, footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        h3 {
+            font-size: 1.5rem;
+            font-weight: normal;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        figure {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+        figcaption {
+            font-style: italic;
+            color: #666;
+            margin-top: 5px;
+            text-align: center;
+        }
+        p {
+            line-height: 1.8;
+            margin: 15px 0;
+            font-size: 1rem;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        /* Responsywność dla mniejszych ekranów */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            h3 {
+                font-size: 1.2rem;
+            }
+            body {
+                margin: 10px;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Paste the generated article HTML code here -->
+    <header>
+        <h1>Podgląd Artykułu</h1>
+    </header>
+
+    <main>
+        <section id="article-content">
+            <!-- Paste the generated article HTML code here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Oxido. Wszystkie prawa zastrzeżone.</p>
+    </footer>
+
 </body>
 </html>
