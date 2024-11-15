@@ -104,10 +104,7 @@ This project is a Python-based application that connects to the OpenAI API to ge
 
 ## Dependencies
 
- - openai: For interacting with the OpenAI API.
  - OpenAI API key (ensure you have registered and received an API key from OpenAI)
- - python-dotenv: To load environment variables from the .env file.
- - argparse: For command-line argument parsing
  - Other dependencies listed in requirements.txt.
 
 ## Troubleshooting
